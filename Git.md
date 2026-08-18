@@ -29,4 +29,14 @@ A commit is a save point in your project it records a snapshot of your files at 
 syntax:
 - git commit -m "message"
 - git commit -a -m "message" - Commit all tracked changes (skip staging)
-- git log - See commit history. 
+- git log - See commit history.
+
+## Push
+
+When we have made changes locally, we want to update our remote repository with the changes.
+
+Transferring our local changes to our remote is done with a push command.
+
+Syntax:
+
+- git push origin - This command pushes your current branch to the remote repository named origin.

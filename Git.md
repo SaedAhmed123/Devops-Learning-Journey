@@ -100,6 +100,20 @@ Syntax:
 
 - git merge - merge a branch into your branch.
 
+## Forking and Pull Request
+
+A fork is a copy of a repository.
+
+This is useful when you want to contribute to someone else's project or start your own project based on theirs.
+
+Fork is not a command in Git, but something offered in GitHub and other repository hosts.
+
+After the changes have been committed, we can send a pull request to the original repository.
+
+## Other Useful Git Commands
+
+- git help --all -  List all possible git commands.
+
 
 
 

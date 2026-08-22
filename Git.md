@@ -86,11 +86,38 @@ git restore --staged filename
 
 A commit is a save point in your project it records a snapshot of your files at a certain time, with a message describing what changed.
 
-
-syntax:
+### Create a Commit
+```
 - git commit -m "message"
-- git commit -a -m "message" - Commit all tracked changes (skip staging)
+```
+### Commit All Tracked Changes
+```
+- git commit -a -m "message" 
+```
+### View Commit History
+```
 - git log - See commit history.
+```
+## 5. Remote Repository
+
+A remote repository is a version of your Git repository stored somewhere else, usually on a platform such as GitHub or GitLab.
+A remote allows you to:
+
+- Back up your code
+- Collaborate with other developers
+- Share your project
+- Push and pull changes
+- A common remote name is:
+**origin**
+
+### View Remotes 
+```
+git remote -v
+```
+### Add a remote 
+```
+git remove add origin <repository-url>
+```
 
 ## Push
 

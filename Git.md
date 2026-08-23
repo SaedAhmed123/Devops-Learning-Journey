@@ -119,26 +119,37 @@ git remote -v
 git remove add origin <repository-url>
 ```
 
-## Push
+## 6. Push
 
 When we have made changes locally, we want to update our remote repository with the changes.
 
 Transferring our local changes to our remote is done with a push command.
 
 Syntax:
+```
+git push origin main
+```
+origin = The remote repository
 
-- git push origin - This command pushes your current branch to the remote repository named origin.
+main = The branch being pushed
 
-## Gitignore
+The first timeyou push a new you may use: 
+```
+git push -u origin main
+```
+
+The -u sets the upstream branch, allowing you to use git push. 
+## 7. Gitignore
 
 The .gitignore file tells Git which files and folders to ignore (not track).
 
 This is useful for keeping log files, temporary files, build artifacts, or personal files out of your repository.
 
 ### Create a gitignore file
-syntax: 
 
-- touch .gitignore
+```
+touch .gitignore
+```
 
 ### When to use gitignore
 
@@ -156,13 +167,23 @@ syntax:
 - (*) matches any number of characters e.g. *.txt - all .txt files
 - ? matches a single character e.g. my?ile.txt - myfile.txt, mygile.txt, myhile.txt.
 
-## Cloning
+## 8. Cloning
 A clone is a full copy of a repository, including all logging and versions of files.
 
-syntax:
-- git clone url
+Syntax:
+```
+git clone url
+```
+A clone normally includes:
+- The project's files
+- Git history
+- Branch information
+- Remote configuration
 
-## Branching
+After cloning, Git automatically creates a remote called:
+**origin**
+
+## 9. Branching
 
 A branch is like a separate workspace where you can make changes and try new ideas without affecting the main project.
 
@@ -172,21 +193,63 @@ A branch is like a separate workspace where you can make changes and try new ide
 - Fixing a bug
 - Experimenting with ideas
 
-Syntax:
+### Create a Branch
+```
+git branch branch_name
+```
 
-- git branch branch_name
-- git branch - Lists all branches.
-- git checkout branch_name - Switch between branches.
-- git branch -d - Deletes a branch.
-- git checkout -b - Creates an emergency branch.
+### List Branches
+```
+git branch
+```
 
-## Merging
+### Switch Branches
+```
+git checkout branch_name
+```
+### Create and Switch to a New Branch
+```
+git checkout -b branch_name
+```
 
-Merging in Git means combining the changes from one branch into another.
+### Delete a Branch
+```
+git branch -d branch_name
+```
 
-Syntax: 
+## 10. Merging
 
-- git merge - merge a branch into your branch.
+Merging combines the changes from one branch into another branch.
+
+After finishing the changes in branch_name, switch to main:
+```
+git checkout main
+```
+Then merge the changes:
+```
+git merge branch_name
+```
+
+The changes from branch_name 
+are now incorporated into main.
+
+**Important**
+
+The branch you are currently on is the branch that receives the changes.
+For example:
+```
+git checkout main
+git merge branch_name
+```
+Means:
+
+Merge branch_name into main.
+
+## 11. Merge Conflicts
+
+
+## Rebasing
+
 
 ## Forking and Pull Request
 

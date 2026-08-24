@@ -247,23 +247,75 @@ Merge branch_name into main.
 
 ## 11. Merge Conflicts
 
+A merge conflict happens when Git cannot automatically determine how to combine changes.
+This commonly occurs when two branches modify the same part of a file differently.
 
-## Rebasing
+Git may mark the file like this:
+```
+<<<<<<< HEAD
+Your changes
+=======
+Changes from the other branch
+>>>>>>> branch_name
+```
+You must manually decide which changes to keep.
+After resolving the conflict:
+```
+git add filename
+git commit
+```
+
+The merge is then completed.
+
+## 12. Forking and Pull Request
+
+A fork is a copy of someone else's repository under your own account on a Git hosting platform such as GitHub.
+Forking is commonly used when contributing to open-source projects.
+
+Typical workflow:
+
+     Original repository
+        ↓
+       Fork
+        ↓
+     Your repository
+        ↓
+     Clone locally
+        ↓
+     Create branch
+        ↓
+     Make changes
+        ↓
+     Commit
+        ↓
+     Push
+        ↓
+     Pull Request
 
 
-## Forking and Pull Request
+A fork is not a Git command.
+It is a feature provided by repository hosting platforms.
 
-A fork is a copy of a repository.
+A Pull Request (PR) is a request to merge changes from one branch/repository into another.
 
-This is useful when you want to contribute to someone else's project or start your own project based on theirs.
+Pull Requests are useful because they allow teams to:
+- Review code
+- Discuss changes
+- Run automated tests
+- Run CI/CD pipelines
+- Check code quality
+- Approve or reject changes
+## 13. Other Useful Git Commands
 
-Fork is not a command in Git, but something offered in GitHub and other repository hosts.
+### Get Help
+```
+git help --all 
+```
 
-After the changes have been committed, we can send a pull request to the original repository.
-
-## Other Useful Git Commands
-
-- git help --all -  List all possible git commands.
+### View Changes
+```
+git diff
+```
 
 
 

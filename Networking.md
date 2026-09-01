@@ -26,3 +26,41 @@ Layer 1 has no media access control (MAC) and no collission detection.
 No method for device to device communication, everything is broadcast.
 
 All devices part of the same layer 1 network need to be using the same layer 1 medium and device standards. A certain type of network card and medium, e.g. wifi cards with antennas and frequency.
+
+
+## Layer 2 - Data Link Layer
+
+
+Layer 2 requires a functional layer 1 to work, higher ayers build on lower layers adding features and capabilities. Devices at L2 have a unique hardware MAC address, its a 12 digit hexadecimal number.
+
+
+### Data Encapsulation
+
+Layer 2 provides frames, it used to transmit data across a physical network and can be addressed to a destination or broadcasted. 
+
+At Layer 2 (the Data Link Layer), data encapsulation wraps a Layer 3 packet inside a frame by adding a specific Layer 2 header and a trailer.
+
+**The Payload:** Is the data the frame carries from source to destination. its generally provided by Layer 3 and the ethertype attribute defines which Layer 3 protocol is used.
+
+
+**Layer 2 Header:** Added to the front of the packet. It includes the source MAC address and the destination MAC address to ensure the data moves correctly across the local network segment.
+
+
+**Layer 2 Trailer:** Added to the end of the frame. This typically contains a Frame Check Sequence (FCS) for error detection, allowing the receiving device to check if the frame was corrupted during transmission. 
+
+
+
+### CSMA/CD
+
+**Carrier Sense Multiple Access with Collision Detection**
+
+At Layer 1 there is no media access control and when two devices send transmission at once, it causes a collission and corrupts the data, this is solved at layer 2.
+
+MAC manages the device interaction, responsible for addressing frames and also controls physical media access.
+
+When transmitting layer 2 checks for carriers, if no carriers are detected,then layer 1 takes frame data converts it to raw bits and transmit. If a carrier is detected, it waits therefore no collission occurs.
+
+However, if both devices check for a carrier that doesn't exist and transmit at the same time. Then a **Jam Signal** is sent by all devies. The devices then use a "backoff algorithm" to wait for a randomised amount if time before attempting to retransmit.
+
+### Switches
+

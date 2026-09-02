@@ -64,3 +64,17 @@ However, if both devices check for a carrier that doesn't exist and transmit at 
 
 ### Switches
 
+Switches understand frames and MAC address. They mainatain a MAC address table, which starts off empty. As the switch receivies frames on its ports, it learns which devices are connected and populates the MAC address table.
+If a frame is transmitted to a specific port, it will be forwarded if the destination MAC address is on the table. If not on the table it forwarded to all ports. Any frames with "All F's" will be forwarded to all ports.
+Switched store and forward, they dont repeat blindly like hubs. It means only valid frames are forwarded, and collisions are isolated on the port they occurred.
+
+
+### Layer 2 Features
+
+- Identifable devices 
+- Media access control
+- Collision detection
+- Unicast 1:1 communication
+- Broadcast 1:All communication 
+- Switches
+ 

@@ -77,4 +77,10 @@ Switched store and forward, they dont repeat blindly like hubs. It means only va
 - Unicast 1:1 communication
 - Broadcast 1:All communication 
 - Switches
- 
+
+## Layer 3 - Network Layer
+
+Layer 3 requires a minimum of one or more operational Layer 2 networks, the purpose is to send and receive data from one location to another.
+
+If there are two isolated local are networks, using only layer 2, only those networks joined by a direct point to point link using the same layer 2 protocol could communicate. **Ethernet** is a layer 2 protocol used generally for local networks. Long distance point to point links will use other more suitable protocols such as **MPLS (Multiprotocol Label Switching) and ATM(synchronous Transfer Mode)**.
+

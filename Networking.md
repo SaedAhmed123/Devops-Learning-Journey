@@ -84,3 +84,23 @@ Layer 3 requires a minimum of one or more operational Layer 2 networks, the purp
 
 If there are two isolated local are networks, using only layer 2, only those networks joined by a direct point to point link using the same layer 2 protocol could communicate. **Ethernet** is a layer 2 protocol used generally for local networks. Long distance point to point links will use other more suitable protocols such as **MPLS (Multiprotocol Label Switching) and ATM(synchronous Transfer Mode)**.
 
+Internet protocol is layer 3 protocol which adds cross-network IP addressing and routing to move data between local are networks without a direct point to point link. IP packets are moved step by step from source to destination via intermediate networks. Encapsulated in different frames along the way. Routes(L3) devices, remove frame encapsulation and add a new frame encapsulation at every step.
+
+### IP Packet Structure 
+
+**IPV4**
+- Source IP address
+- Destination IP address
+- Protocol e.g. ICMP, TCP, UDP
+- Data
+- Time to live(TTL) - maximum number of hops before discarded.
+
+**IPV6**
+- Source IP address - bigger larger addresses
+- Destination IP address
+- Data
+- Hop Limit - similar to TTL
+
+### IP Addressing
+
+

@@ -103,4 +103,24 @@ Internet protocol is layer 3 protocol which adds cross-network IP addressing and
 
 ### IP Addressing
 
+An IP address is a unique label assigned to every device connected to a computer network. It acts like a digiital street address, allowing devices(phones, routers, laptop) to identify each other and route internet traffic back and forth. All IP addresses have a netwrok part and a host part. if the network part of two IP addresses match, it means they're on the same IP network. 
+
+
+### Subnet Mask
+
+Its the subnet mask which allows a host to determine if an IP address it needs to communicate with is local or remote - which influences if it needs to use a gateway or can communicate locally.
+
+
+### Route Tables and Routes
+
+A routing table is a set of rules, often viewed in table format, that is used to determine where data packets traveling over an IP network will be directed. Route tables can be statically populated or there are protocols such as BGP (boarder gateway protocol), which allows all routers to communicate with each other to exchange which netwroks they know about. 
+
+### Address Resolution Protocol (ARP)
+
+ARP -  maps IP addresses to MAC addresses within a local network.
+
+If on the same network, one device can be sent a layer 2 All F's broadcast who has a certain IP address. ARP software sees the broadcast and says " I'm that IP address", sends the corresponding MAC address. Therefore, the firstndevice now knows the second devices MAC address and use it as a destination address.
+
+### IP Routing
+
 

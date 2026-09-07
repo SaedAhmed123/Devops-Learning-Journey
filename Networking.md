@@ -123,4 +123,19 @@ If on the same network, one device can be sent a layer 2 All F's broadcast who h
 
 ### IP Routing
 
+Subnet mask and destination IP address confirm if two devices are on the same network or not. In this scenario ARP (Address resolution protocol) is used to find the mac address of the default gateway(router). The payload with a destination of the remote device is encapsulated in a frame with a destination of the router's MAC address. The router removes the frame around the payload and reviews the packets destination IP. The router has a route for the network of the final destination and creates a new frame with a second router mac address as its next destination. The frame is sent to the next routers mac address and removes the frame around the payload. The second router confirms the destination IP address is in the same network, uses ARP to get the mac address of the device. A new frame with the final devices as its mac address is created and encapsulated the payload is sent to the device. 
 
+### Layer 3 Summary
+
+- IP address(IPv4/IPv6) - cross network addressing.
+- ARP - Maps the MAC address to the corresponding IP address. 
+- Route - Where to forward the packet.
+- Route Table - shows multiple routes.
+- Router - moves packets from source to destination, encapsulating in frames along the way. 
+- Allowing for device to device communication over the internet.
+
+### Limitations 
+
+- No method for channels of communications, only source IP and destination IP. It cannot distinguish between different applications running on the same device.
+
+- Packets can be delivered out of order. Individual packets move across the internet through intermediate networks, depending on network conditions, theres no guarantee the packet will take the same route from source to destination. Its possible they arrive in different order.

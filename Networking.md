@@ -139,3 +139,15 @@ Subnet mask and destination IP address confirm if two devices are on the same ne
 - No method for channels of communications, only source IP and destination IP. It cannot distinguish between different applications running on the same device.
 
 - Packets can be delivered out of order. Individual packets move across the internet through intermediate networks, depending on network conditions, theres no guarantee the packet will take the same route from source to destination. Its possible they arrive in different order.
+
+- IP has no flow control, if the source transmit faster than the destination can receive it, it can saturate the destination causing loss of packets and loss of data.
+
+## Layer 4
+
+Layer 4 is responsible for provding reliable, efficient and ordered end to end communication between applications on different hosts.
+
+### TCP and UDP
+
+**TCP** - Transmission Control Protocol
+
+**UDP** - User Datagram Protocol

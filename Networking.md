@@ -151,3 +151,50 @@ Layer 4 is responsible for provding reliable, efficient and ordered end to end c
 **TCP** - Transmission Control Protocol
 
 **UDP** - User Datagram Protocol
+
+
+
+Both are responsible for end-to-end communication between applications, but they differ significantly in terms of reliability, speed, and use cases. 
+
+TCP is a slower, more reliable connection oriented protocol that ensures accurate and ordered data delivery. Its more secure and dependable and used in cases such as web browsing, email, and file transfers. 
+
+
+UDP is faster, less reliable connectionless protocol that sends data without reliability guarantees. Its used when speed is more important and best for live video streaming, online gaming and DNS (Domain Name System).
+
+### TCP Segments
+
+TCP segments are encapsulated within IP packets. Segments dont have source and destination IP, the packets provide device addressing. Instead it uses source and destination ports. Ports allow multiple streams of communications, each conversation is a unique combination of source and destination IPs and source and destination ports, all four values together identify as a single conversation or communication channel.
+
+- Sequence Number - Ensures data arrives reliably and in the correct order. 
+
+- Acknowledgement Number - Used to confirm the successful receipt of data 
+
+- Control Flags - Manages connection states, data transmission and control flow.
+
+- TCP Window - The number of bytes you indicate that you're willing to recieve between acknowldgements. Once reached the sender will pause until youy acknowldge that amount of data. 
+
+- Checksum - Used for error checking, can arrange for retransmission of data as required. 
+
+- Urgent pointer - To flag high-priority data that needs immediate processing by the recieving application.
+
+### TCP 3 Way Handshake 
+
+The 3 Way handshake ensures both server and client is ready for data transmission. 
+
+1. SYN (Synchronise): The sender sends a TCP segment with a SYN=1 including its ISN (Initial Sequence Number) to the Server to request a connection.
+
+2. SYN - ACK (Synchronise and Acknowledge): Server replies with SYN=1 & ACK=1, containing its own ISN and ACK = client_ISN + 1, acknowledging the request and agree to the connection. 
+
+3. ACK (Acknowldge): The sender sends an ACK=1 segment with ACK = server_ISN + 1, confirming the connection is established.
+
+### TCP 4 Way Handshake
+
+Connection Termination (4 Way Handshake)
+
+1. FIN(Finish): The sender who wants to close the connection sends a FIN segment to the server.
+
+2. ACK(Acknowldge): The server will respond with an ACK to acknowldge the closing of a request. 
+
+3. FIN from the server: The server will then send its own FIN when its ready to close the request.
+
+4. ACK: The sender responds with a ACK to confirm the termination.

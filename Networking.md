@@ -270,3 +270,42 @@ curl - Read URL in CLI and make HTTP requests
 ```
 wget -  Used Downaload files from URL
 ```
+
+### SSH (Secure Shell)
+
+SSH is a secure communication protocol that allows a user to access and control a remote computer over a network. 
+
+```
+ssh username@ {hostname or IP address}
+```
+
+SSH allows for password-less authentication using ssh keys.
+
+Generate Keys
+```
+ssh-keygen
+```
+Upload the public key
+```
+ssh-copy-id username@IP_address
+```
+
+### DNS 
+
+DNS (Domain Name System) converts readable names into IP addresses.
+
+```
+dig URL
+nslookup URL
+```
+
+## Layer 7 - Application Layer
+
+### HTTP and HTTPS
+
+HTTP and HTTPS are two protocols used for transmitting data over the Internet. HTTPS uses encryption to increase online security and keep data confidential between a web browser and a website. 
+
+he primary distinction between HTTP and HTTPS lies in the level of data encryption. HTTP does not encrypt the information transmitted between the client and server, making it susceptible to interception and tampering. On the other hand, HTTPS encrypts the data using SSL (Secure Sockets Layer) or TLS (Transport Layer Security) protocols, ensuring that the information remains secure during transmission.
+
+The encryption used in HTTPS is based on public-key cryptography, which uses a pair of keys, one public and one private. The public key is used to encrypt the data, and the private key is used to decrypt it. This ensures that only the intended recipient can read the encrypted data.
+

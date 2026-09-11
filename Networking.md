@@ -198,3 +198,75 @@ Connection Termination (4 Way Handshake)
 3. FIN from the server: The server will then send its own FIN when its ready to close the request.
 
 4. ACK: The sender responds with a ACK to confirm the termination.
+
+## Layer 5 - Session Layer 
+
+### NAT 
+
+Network Address Translation - is designed to overcome IPv4 shortages and provides some secruity benefits. It translates private IPv4 to public IPs. There are three types of NAT.
+
+1. Static NAT - Translates one ptivate IP to one fixed public IP, giving the device access to the internet.
+
+2. Dynamic NAT - Maps private IP to the first available public IP from a predefined pool of IPs.
+
+3. Port Address Translation(PAT) - Many private IP to one public IP using different port numbers.
+
+### Stateless v Stateful Firewalls
+
+A server runs on a well-known port e.g. tcp/443 and the client runs on a ephimeral port e.g. tcp/230601.
+
+Every connection has two parts - request(initiation) and response. 
+
+The client(Your Laptop) initiates a connection to the server on a well-known destination port. The server responds using source port of the server and a destination port of the laptop. Directionality inbound/outbound depends on perspective (client/server).
+
+When packets are sent from client to server, the request is outbound from client perspective and inbound from the server perspective. When the server sends packets back to the client, the response is outbound from the server perspective. The response is inbound from the client perspective. 
+
+
+**Stateless Firewall**
+
+It doesn't understand the state of a connection. It needs two rules which allow outbound segments and another for response segment, with a stateless firewall the request is always to a well-known port. 
+
+
+**Stateful Firewall**
+
+Stateful firewalls views one thing, the outbound implicitly allows the inbound response. Therefore, only one rule is required for stateful firewalls which is for allowing/denying the request and the response is automatically allowed/denied significantly reducing admin overhead. 
+
+There's no need to allow traffic for the entire ephemeral port range as the firewall knows the specific ephermeal port for the connection.
+
+## Layer 6 - Presentation Layer
+
+### IPSec VPN Fundamentals
+
+IPsec is a group of protocols aimed to set up secure tunnels across insercure networks or routers between two peers (local and remote), it provides authentication and encryprtion: symmetric encryption and asymmetric encryption.
+
+**Symmetric Encryption**
+
+It uses one key for encryption and decryption, both sender and reciever must have this exact shared key, its fast but its a challenge to exchange keys securely. Best uses are for securing bulk data, hardrives and handles large amounts of data well.
+
+**Asymmetric Encryption**
+
+Public and private keys are used for encryption and decryption. Its slower and more resource heavy, but eliminates the risk of sharing a secret key over an unsafe network. Best uses for establishing safe connections(HTTPs/TLS), sending a symmetric key to start a private chat.
+
+Most secure systems use a hybrid approach. They use asymmetric encryption to safely trade a temporary key, and then use fast symmetric encryption for the rest of the conversation. 
+
+
+## Linux Networking Terms
+
+```
+ping - useful tool for checking network connectivity
+```
+```
+traceroute - see the path traffic takes 
+```
+```
+dig - Inspect DNS
+```
+```
+ss/netstat - Check open ports and connections
+```
+```
+curl - Read URL in CLI and make HTTP requests
+```
+```
+wget -  Used Downaload files from URL
+```
